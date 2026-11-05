@@ -1,0 +1,198 @@
+[
+  {
+    "chunk_id": "SEC_001",
+    "title": "Safe Clinical Care",
+    "section": "Clinical Care and Patient Safety",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Clinicians provide care within their role, competence, and approved clinical procedures. Before treatment, they confirm the patient's identity, relevant history, allergies, current condition, and care plan. Concerns about deterioration, unclear instructions, or unsafe conditions are escalated promptly to the responsible clinician or supervisor."
+  },
+  {
+    "chunk_id": "SEC_002",
+    "title": "Safety Events and Near Misses",
+    "section": "Clinical Care and Patient Safety",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Staff report safety events, near misses, and hazardous conditions through the approved reporting process as soon as practical. Reports must be factual, timely, and free of blame. The responsible team reviews events, addresses immediate risks, and uses findings to improve patient safety."
+  },
+  {
+    "chunk_id": "SEC_003",
+    "title": "Protection of Patient Information",
+    "section": "Privacy and Confidentiality",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Patient information is accessed, used, and shared only when necessary for authorized care, operations, or legal obligations. Staff protect records from unauthorized viewing, discussion, disclosure, loss, or alteration. Conversations and screens containing patient information must not be visible or audible to unauthorized people."
+  },
+  {
+    "chunk_id": "SEC_004",
+    "title": "Privacy Incidents",
+    "section": "Privacy and Confidentiality",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Suspected misdirected messages, inappropriate access, lost records, or other privacy incidents are reported immediately through the approved incident process. Staff preserve relevant information and do not attempt to conceal or independently resolve the incident. Privacy and leadership teams assess the event and coordinate follow-up."
+  },
+  {
+    "chunk_id": "SEC_005",
+    "title": "Informed Consent",
+    "section": "Consent and Patient Rights",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Before a procedure or treatment requiring consent, the responsible clinician explains its purpose, expected benefits, material risks, alternatives, and the option to decline. Consent is voluntary, documented in the health record, and confirmed before the intervention. Patients may ask questions or withdraw consent at any time."
+  },
+  {
+    "chunk_id": "SEC_006",
+    "title": "Respectful and Equitable Care",
+    "section": "Consent and Patient Rights",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Patients receive respectful care that considers their dignity, values, culture, communication needs, and personal preferences. Staff arrange appropriate communication support when needed and involve approved support persons where possible. Discrimination, harassment, or retaliation against patients or families is prohibited."
+  },
+  {
+    "chunk_id": "SEC_007",
+    "title": "Accurate Health Records",
+    "section": "Clinical Documentation",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Clinical documentation is timely, accurate, objective, and sufficient to support safe continuity of care. Entries identify the author, record relevant assessments, decisions, interventions, and outcomes, and follow approved recordkeeping standards. Staff correct errors through the authorized amendment process without obscuring the original record."
+  },
+  {
+    "chunk_id": "SEC_008",
+    "title": "Record Access and Corrections",
+    "section": "Clinical Documentation",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Patients may request access to their medical records or ask for corrections through the designated health information process. Requests are verified, documented, and handled within applicable requirements. Staff do not alter records in response to a request unless the authorized review determines that an amendment is appropriate."
+  },
+  {
+    "chunk_id": "SEC_009",
+    "title": "Patient Complaints and Grievances",
+    "section": "Complaints and Feedback",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Patients and representatives may raise concerns about care, service, communication, or rights without affecting their treatment. Staff listen respectfully, address immediate concerns when possible, and route formal grievances through the approved process. Complaints are documented, reviewed, and answered by the responsible team."
+  },
+  {
+    "chunk_id": "SEC_010",
+    "title": "Learning From Feedback",
+    "section": "Complaints and Feedback",
+    "source_document": "Northbridge Hospital Patient Care Policies",
+    "content": "Leaders review complaint and feedback trends to identify recurring issues, risks, and opportunities to improve care. Improvement actions have an accountable owner, defined follow-up, and documented outcomes. Patients receive appropriate information about how their concern was handled, subject to privacy and legal requirements."
+  },
+  {
+    "chunk_id": "SEC_011",
+    "title": "Workforce Coverage",
+    "section": "Staffing and Scheduling",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Managers schedule qualified staff to meet anticipated service needs, required skills, and patient or operational demand. Staffing gaps, unsafe workloads, and unplanned absences are escalated through the approved coverage process. Temporary reassignment does not exceed a staff member's verified competence or authorization."
+  },
+  {
+    "chunk_id": "SEC_012",
+    "title": "Rosters and Time Records",
+    "section": "Staffing and Scheduling",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Work schedules, on-call arrangements, leave, and time records are maintained in the authorized system. Staff review assigned shifts and report discrepancies promptly. Managers approve changes, overtime, and agency use in accordance with workforce, budget, and fatigue-management requirements."
+  },
+  {
+    "chunk_id": "SEC_013",
+    "title": "Safe Facilities",
+    "section": "Facilities and Environment",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Facilities are maintained to support safe, accessible, and reliable services. Staff report hazards, damaged infrastructure, utility disruptions, and blocked emergency routes without delay. The responsible facilities team assesses risk, implements interim controls, and coordinates repairs or service continuity measures."
+  },
+  {
+    "chunk_id": "SEC_014",
+    "title": "Environmental Cleanliness",
+    "section": "Facilities and Environment",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Departments maintain clean, orderly work areas and follow approved cleaning, waste, and spill-response procedures. Staff restrict access to contaminated or unsafe areas until they are made safe. Cleaning concerns that may affect patients, staff, or visitors are reported to Environmental Services or the responsible manager."
+  },
+  {
+    "chunk_id": "SEC_015",
+    "title": "Authorized Purchasing",
+    "section": "Finance and Procurement",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Goods and services are purchased only through approved procurement channels and within delegated financial authority. Staff document the business need, obtain required approvals, and select suppliers using applicable purchasing requirements. Personal purchases, conflicts of interest, and unauthorized commitments are prohibited."
+  },
+  {
+    "chunk_id": "SEC_016",
+    "title": "Asset and Supply Stewardship",
+    "section": "Finance and Procurement",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Departments safeguard supplies, equipment, and other organizational assets. Inventory is used responsibly, stored securely, and monitored for expiry, loss, or unusual consumption. Missing, damaged, or defective assets are reported promptly so that replacement, repair, and financial controls can be applied."
+  },
+  {
+    "chunk_id": "SEC_017",
+    "title": "Quality Monitoring",
+    "section": "Quality and Improvement",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Leaders monitor service quality through defined measures, audits, feedback, and operational review. Results are used to identify variation, risks, and improvement opportunities. Teams document actions, assign accountable owners, and review progress until the intended improvement is achieved or the approach is revised."
+  },
+  {
+    "chunk_id": "SEC_018",
+    "title": "Change Management",
+    "section": "Quality and Improvement",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Operational changes that may affect service delivery, safety, staffing, systems, or compliance are assessed before implementation. The change owner defines scope, risks, approvals, communication, training, and contingency arrangements. Material changes are reviewed after implementation to confirm that expected outcomes and controls remain effective."
+  },
+  {
+    "chunk_id": "SEC_019",
+    "title": "Operational Incidents",
+    "section": "Incident Management",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Staff report operational incidents, including service disruptions, equipment failures, security concerns, and hazards, through the approved process. Immediate actions focus on safety, continuity, and preservation of relevant facts. Managers coordinate escalation, communication, and recovery according to the incident's severity and impact."
+  },
+  {
+    "chunk_id": "SEC_020",
+    "title": "Review and Corrective Action",
+    "section": "Incident Management",
+    "source_document": "Northbridge Hospital Operations Policies",
+    "content": "Significant incidents are reviewed to identify contributing factors, control failures, and lessons learned. Corrective actions specify an owner, due date, and method for verifying completion. Findings are shared with affected teams at an appropriate level of detail to strengthen prevention and operational resilience."
+  },
+  {
+    "chunk_id": "SEC_021",
+    "title": "Secure Access",
+    "section": "Cybersecurity and Access Control",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Access to systems, applications, and data is granted only after identity verification, business approval, and assignment of the minimum permissions needed for the role. Shared accounts are prohibited unless formally approved. Privileged access receives additional controls, logging, and periodic review."
+  },
+  {
+    "chunk_id": "SEC_022",
+    "title": "Authentication and Credentials",
+    "section": "Cybersecurity and Access Control",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Users protect passwords, multi-factor authentication methods, tokens, and other credentials from disclosure or misuse. Credentials must not be shared, stored insecurely, or reused contrary to approved standards. Suspected credential compromise is reported immediately so access can be reset, investigated, and protected."
+  },
+  {
+    "chunk_id": "SEC_023",
+    "title": "Acceptable Technology Use",
+    "section": "Acceptable Use and Systems Management",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Organizational systems, networks, devices, and software are used for authorized business purposes and in accordance with law and policy. Users must not install unapproved software, bypass security controls, or use systems to access, create, or distribute inappropriate content. Limited personal use is permitted only where approved."
+  },
+  {
+    "chunk_id": "SEC_024",
+    "title": "Managed Systems and Devices",
+    "section": "Acceptable Use and Systems Management",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "IT manages supported systems and devices through approved configuration, patching, inventory, and endpoint protection processes. Users do not alter security settings or connect unauthorized devices. Lost, stolen, malfunctioning, or suspected-compromised equipment is reported promptly to enable containment and recovery."
+  },
+  {
+    "chunk_id": "SEC_025",
+    "title": "Data Classification and Handling",
+    "section": "Data Governance and Retention",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Information is classified and handled according to its sensitivity, legal obligations, and business value. Restricted and confidential data is shared only with authorized recipients through approved methods. Staff use approved storage, transfer, and disposal processes to prevent unauthorized access, loss, or alteration."
+  },
+  {
+    "chunk_id": "SEC_026",
+    "title": "Data Retention and Disposal",
+    "section": "Data Governance and Retention",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Records and data are retained for approved business, clinical, legal, and regulatory periods. When retention ends, information is securely deleted, destroyed, or archived through authorized processes. Legal holds, investigations, or audits suspend routine disposal until the responsible authority releases the information."
+  },
+  {
+    "chunk_id": "SEC_027",
+    "title": "Information Security Incidents",
+    "section": "Security Incidents and Business Continuity",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Suspected phishing, malware, unauthorized access, data exposure, or other security incidents are reported immediately through the approved channel. Users preserve relevant information and do not investigate beyond their authority. IT and security teams assess impact, contain the incident, coordinate communications, and document remediation."
+  },
+  {
+    "chunk_id": "SEC_028",
+    "title": "Business Continuity and Recovery",
+    "section": "Security Incidents and Business Continuity",
+    "source_document": "Northbridge Hospital IT and Information Governance Policies",
+    "content": "Critical services maintain documented continuity and recovery arrangements for outages, cyber incidents, and other disruptions. Plans identify essential functions, responsible roles, communication routes, backup methods, and recovery priorities. Teams test plans periodically and update them after exercises, incidents, or material system changes."
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "hospital-policy-agent": "./src/agent.py:agent"
+  },
+  "env": ".env"
+}

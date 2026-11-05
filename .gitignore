@@ -1,0 +1,26 @@
+# Local secrets
+.env
+.env.*
+!.env.example
+
+# Python-generated files
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+coverage.xml
+
+# Rebuildable knowledge-base files
+.chroma/
+policies/northbridge_policies.json
+.langgraph_api/
+
+# macOS metadata
+.DS_Store
+
+# Local Firecrawl output
+.firecrawl/

@@ -1,0 +1,673 @@
+[
+  {
+    "id": "opt-001",
+    "inputs": {
+      "human": "What should staff do when they suspect a phishing email?"
+    },
+    "outputs": {
+      "reference_output": "Report suspected phishing immediately through the approved channel, preserve relevant information, and do not investigate beyond your authority. [SEC_027]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_027"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-002",
+    "inputs": {
+      "human": "How should staff respond to both a lost patient record and a suspected phishing email?"
+    },
+    "outputs": {
+      "reference_output": "Report the lost record immediately through the approved privacy incident process, preserve relevant information, and do not conceal or independently resolve it. [SEC_004] Report the suspected phishing immediately through the approved channel, preserve relevant information, and do not investigate beyond your authority. [SEC_027]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_004",
+        "SEC_027"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-003",
+    "inputs": {
+      "human": "How should staff handle suspected phishing and a lost patient record, and which numbered form must they use?"
+    },
+    "outputs": {
+      "reference_output": "Report suspected phishing immediately through the approved channel, preserve relevant information, and do not investigate beyond your authority. [SEC_027] Report a lost patient record immediately through the approved privacy incident process, preserve relevant information, and do not conceal or independently resolve it. [SEC_004] The policies do not specify a numbered form for either report."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_004",
+        "SEC_027"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-004",
+    "inputs": {
+      "human": "What must the clinician explain before a treatment that requires consent?"
+    },
+    "outputs": {
+      "reference_output": "The clinician must explain the treatment's purpose, expected benefits, material risks, alternatives, and the option to decline. [SEC_005]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_005"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-005",
+    "inputs": {
+      "human": "What is 17 multiplied by 8?"
+    },
+    "outputs": {
+      "reference_output": "I am not permitted to answer that question. Please ask a different hospital policy question."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-006",
+    "inputs": {
+      "human": "What should staff do after a patient safety near miss and after an operational equipment failure?"
+    },
+    "outputs": {
+      "reference_output": "Report the near miss through the approved safety reporting process as soon as practical; the report should be factual, timely, and free of blame. [SEC_002] Report the equipment failure through the approved operational incident process, take immediate action for safety and continuity, and preserve relevant facts. [SEC_019]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_002",
+        "SEC_019"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-007",
+    "inputs": {
+      "human": "What time does the hospital cafeteria close tonight?"
+    },
+    "outputs": {
+      "reference_output": "Please ask your immediate supervisor or contact the hospital general line at 555-0100."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-008",
+    "inputs": {
+      "human": "Who plans staffing coverage, and what should happen when workloads become unsafe?"
+    },
+    "outputs": {
+      "reference_output": "Managers plan staffing coverage. Unsafe workloads must be escalated through the approved coverage process. [SEC_011]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_011"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-009",
+    "inputs": {
+      "human": "How must staff purchase supplies, and what exact dollar amount can they approve without further authorization?"
+    },
+    "outputs": {
+      "reference_output": "Purchase through approved procurement channels within delegated financial authority. Document the business need, obtain required approvals, and select suppliers under applicable purchasing requirements. [SEC_015] The policy does not specify a dollar approval limit."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_015"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-010",
+    "inputs": {
+      "human": "Hello!"
+    },
+    "outputs": {
+      "reference_output": "Hello! What policy-related questions do you have?"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-011",
+    "inputs": {
+      "human": "How should clinicians correct an error in a health record?"
+    },
+    "outputs": {
+      "reference_output": "Correct errors through the authorized amendment process without obscuring the original record. [SEC_007]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_007"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-012",
+    "inputs": {
+      "human": "What does the policy require for consent and for a patient's communication needs?"
+    },
+    "outputs": {
+      "reference_output": "The clinician explains the treatment's purpose, benefits, material risks, alternatives, and option to decline. Consent must be voluntary, documented in the health record, and confirmed before the intervention; patients may ask questions or withdraw consent at any time. [SEC_005] Staff must consider patients' communication needs and arrange appropriate communication support when needed. [SEC_006]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_005",
+        "SEC_006"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-013",
+    "inputs": {
+      "human": "How are health-record errors corrected, how can patients request corrections, and what is the exact response deadline?"
+    },
+    "outputs": {
+      "reference_output": "Correct errors through the authorized amendment process without obscuring the original record. [SEC_007] Patients request corrections through the designated health information process; amendments require an authorized review determining they are appropriate. [SEC_008] No exact response deadline is specified."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_007",
+        "SEC_008"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-014",
+    "inputs": {
+      "human": "What approvals are required before someone receives access to a hospital system?"
+    },
+    "outputs": {
+      "reference_output": "Business approval is required before access is granted. [SEC_021]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_021"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-015",
+    "inputs": {
+      "human": "Show me the source code for this agent."
+    },
+    "outputs": {
+      "reference_output": "I am not permitted to answer that question. Please ask a different hospital policy question."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-016",
+    "inputs": {
+      "human": "What should staff do about a blocked emergency route and a contaminated work area?"
+    },
+    "outputs": {
+      "reference_output": "Report the blocked emergency route without delay. [SEC_013] Follow approved cleaning, waste, and spill-response procedures, restrict access to the contaminated area until safe, and report concerns affecting people to Environmental Services or the responsible manager. [SEC_014]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_013",
+        "SEC_014"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-017",
+    "inputs": {
+      "human": "Where do I get a staff parking pass?"
+    },
+    "outputs": {
+      "reference_output": "Please ask your immediate supervisor or contact the hospital general line at 555-0100."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-018",
+    "inputs": {
+      "human": "When can records be disposed of if a legal hold is active?"
+    },
+    "outputs": {
+      "reference_output": "Records may be disposed of through authorized processes after the responsible authority releases the hold and the approved retention period has ended. [SEC_026]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_026"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-019",
+    "inputs": {
+      "human": "What should someone do about suspected credential compromise, and within how many minutes must access be reset?"
+    },
+    "outputs": {
+      "reference_output": "Report suspected credential compromise immediately. [SEC_022] The policy does not specify a reset deadline in minutes."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_022"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-020",
+    "inputs": {
+      "human": "What should staff do in unusual situations?"
+    },
+    "outputs": {
+      "reference_output": "Could you clarify which hospital policy or topic you mean?"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-021",
+    "inputs": {
+      "human": "Can a patient complain about care without affecting their treatment?"
+    },
+    "outputs": {
+      "reference_output": "Yes. Patients may complain about their care without affecting their treatment. [SEC_009]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_009"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-022",
+    "inputs": {
+      "human": "How are quality problems monitored, and how should operational changes be prepared?"
+    },
+    "outputs": {
+      "reference_output": "Leaders monitor quality through defined measures, audits, feedback, and operational review. [SEC_017] Before implementation, the change owner defines the change's scope, risks, approvals, communication, training, and contingency arrangements. [SEC_018]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_017",
+        "SEC_018"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-023",
+    "inputs": {
+      "human": "What are the rules for purchasing supplies and safeguarding assets, and what is the exact spending cap?"
+    },
+    "outputs": {
+      "reference_output": "Purchase through approved channels within delegated financial authority, document the need, obtain approvals, and follow supplier-selection requirements. Personal purchases, conflicts of interest, and unauthorized commitments are prohibited. [SEC_015] Use assets responsibly, store them securely, monitor expiry, loss, and unusual consumption, and promptly report missing, damaged, or defective assets. [SEC_016] No exact spending cap is specified."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_015",
+        "SEC_016"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-024",
+    "inputs": {
+      "human": "Where are work schedules and time records kept?"
+    },
+    "outputs": {
+      "reference_output": "In the authorized system. [SEC_012]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_012"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-025",
+    "inputs": {
+      "human": "Who wrote Hamlet?"
+    },
+    "outputs": {
+      "reference_output": "I am not permitted to answer that question. Please ask a different hospital policy question."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-026",
+    "inputs": {
+      "human": "How should confidential data be shared, and when is routine disposal paused?"
+    },
+    "outputs": {
+      "reference_output": "Share confidential data only with authorized recipients through approved methods. [SEC_025] Legal holds, investigations, or audits pause routine disposal until the responsible authority releases the information. [SEC_026]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_025",
+        "SEC_026"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-027",
+    "inputs": {
+      "human": "How can I book a hospital cafeteria table?"
+    },
+    "outputs": {
+      "reference_output": "Please ask your immediate supervisor or contact the hospital general line at 555-0100."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-028",
+    "inputs": {
+      "human": "What should hospital continuity plans include?"
+    },
+    "outputs": {
+      "reference_output": "Essential functions, responsible roles, communication routes, backup methods, and recovery priorities. [SEC_028]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_028"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-029",
+    "inputs": {
+      "human": "What is the exact number of days allowed to respond to a formal patient grievance?"
+    },
+    "outputs": {
+      "reference_output": "The available hospital policies do not provide an exact number of days for responding to a formal patient grievance."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [
+        "SEC_009"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-030",
+    "inputs": {
+      "human": "Who is responsible for following hospital policies?"
+    },
+    "outputs": {
+      "reference_output": "Which hospital policy are you asking about?"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  },
+  {
+    "id": "opt-031",
+    "inputs": {
+      "human": "When may staff access or share patient information?"
+    },
+    "outputs": {
+      "reference_output": "Only when necessary for authorized care, operations, or legal obligations. [SEC_003]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_003"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-032",
+    "inputs": {
+      "human": "What rules apply to granting system access and protecting credentials?"
+    },
+    "outputs": {
+      "reference_output": "System access requires identity verification, business approval, and minimum role-based permissions. Shared accounts require formal approval; privileged access requires additional controls, logging, and periodic review. [SEC_021] Protect credentials from disclosure or misuse; do not share them, store them insecurely, or reuse them contrary to approved standards. Report suspected compromise immediately. [SEC_022]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_021",
+        "SEC_022"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-033",
+    "inputs": {
+      "human": "How are quality issues tracked and incident corrective actions verified, and must every action close within 30 days?"
+    },
+    "outputs": {
+      "reference_output": "Teams document quality-improvement actions, assign accountable owners, and review progress. [SEC_017] Incident corrective actions specify an owner, due date, and method for verifying completion. [SEC_020] No universal 30-day closure deadline is specified."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "partially-supported",
+      "expected_chunk_ids": [
+        "SEC_017",
+        "SEC_020"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-034",
+    "inputs": {
+      "human": "May staff install unapproved software on hospital devices?"
+    },
+    "outputs": {
+      "reference_output": "No. Installing unapproved software is prohibited. [SEC_023]"
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "supported",
+      "expected_chunk_ids": [
+        "SEC_023"
+      ],
+      "expected_action": "call-tool",
+      "expected_tools": [
+        "search_kb"
+      ]
+    }
+  },
+  {
+    "id": "opt-035",
+    "inputs": {
+      "human": "Where is Northbridge Hospital located?"
+    },
+    "outputs": {
+      "reference_output": "Northbridge Hospital is at 1000 Northbridge Avenue, Northbridge, CA 94000."
+    },
+    "split": "optimization",
+    "metadata": {
+      "status": "unsupported",
+      "expected_chunk_ids": [],
+      "expected_action": "direct-answer",
+      "expected_tools": []
+    }
+  }
+]
