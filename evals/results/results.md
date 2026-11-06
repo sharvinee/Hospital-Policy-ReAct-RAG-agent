@@ -1,0 +1,12 @@
+# Experiment Results
+
+Mean scores from completed evaluation experiments.
+
+| Experiment | Retrieval precision | Retrieval recall | Tool match | Correctness | Groundedness |
+|---|---:|---:|---:|---:|---:|
+| `exp1-f12ebb88` | 0.7548 | 0.9714 | 1.0000 | 0.9143 | 0.9714 |
+| `exp1-ea35b87c` | 0.7852 | 0.9571 | 1.0000 | 0.8857 | 0.9429 |
+| `exp3-5b736a4c` | 0.7952 | 0.9000 | 1.0000 | 0.8857 | 0.9429 |
+| `exp4-74538c6f` | 0.6448 | 0.9857 | 1.0000 | 1.0000 | 0.9429 |
+| `exp5-b1b2b7a1` | 0.7333 | 0.9571 | 1.0000 | 0.9714 | 0.9429 |
+| `exp6-844a43ce` | 0.7048 | 0.9857 | 1.0000 | 0.9714 | 0.9143 |

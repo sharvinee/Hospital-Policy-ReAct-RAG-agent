@@ -14,12 +14,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Local LangGraph development server for running the LangChain agent.
 - Evaluation datasets and LangSmith workflows for scoring answer correctness, groundedness, retrieval precision and recall, and tool selection.
 - An experiment export command and saved summaries with evaluator scores, errors, and latency percentiles.
+- A tracked table comparing mean scores across completed experiments.
 
 ### Changed
 
 - Refined policy-answer instructions for supported, partial, and unsupported questions, including a retry when relevant evidence is missing.
 - Updated correctness and groundedness judges to assess answers against retrieved policy evidence.
-- Lowered the default retrieval relevance threshold from 0.5 to 0.4.
+- Lowered the default retrieval relevance threshold from 0.5 to 0.42.
 - Evaluation runs now require a description; pass it with the `--description` option.
 - Updated the legal-hold reference answer and added hospital-location routing to the assistant.
 

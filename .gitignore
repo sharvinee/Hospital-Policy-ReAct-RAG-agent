@@ -25,5 +25,5 @@ policies/northbridge_policies.json
 # Local Firecrawl output
 .firecrawl/
 
-# Local agent-evaluation notes; keep experiment history out of the repository.
-evals/results/results.md
+# Local project instructions
+AGENTS.md
