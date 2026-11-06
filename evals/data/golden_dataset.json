@@ -331,7 +331,7 @@
       "human": "When can records be disposed of if a legal hold is active?"
     },
     "outputs": {
-      "reference_output": "Records may be disposed of through authorized processes after the responsible authority releases the hold and the approved retention period has ended. [SEC_026]"
+      "reference_output": "Records may be disposed of through authorized processes after the responsible authority releases the hold. [SEC_026]"
     },
     "split": "optimization",
     "metadata": {

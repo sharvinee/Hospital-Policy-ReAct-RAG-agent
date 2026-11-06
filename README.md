@@ -83,15 +83,24 @@ Run an evaluation on a split in that LangSmith dataset:
 uv run python evals/run_evals.py \
   --dataset-name northbridge-policy-golden \
   --split optimization \
-  --experiment-prefix baseline
+  --experiment-prefix baseline \
+  --description "Baseline optimization evaluation"
 ```
 
 LangSmith stores each experiment's runs and evaluator results. The local runner prints the experiment name and does not write local result files. Precision and recall are fractional for examples with expected chunks; with no expected chunks, each score is `1.0` only when retrieval returns no chunks.
+
+Export a completed experiment summary as JSON, including pass counts, mean scores, run errors, and latency percentiles:
+
+```bash
+uv run python evals/export_experiment.py baseline-optimization-abc123
+```
+
+The exporter writes `evals/results/<experiment_name>.json`. It reports `rows_passed` and `rows_judged` separately for each evaluator, so partial retrieval scores contribute to the mean but count as passed only when the score is `1.0`.
 
 ## Project layout
 
 - `policies/` — source policy Markdown
 - `src/` — agent, prompt, settings, and retrieval tool
 - `scripts/create_policies_kb.py` — policy chunking and Chroma index builder
-- `evals/data/` — evaluation examples and prior experiment exports
+- `evals/data/` — evaluation examples
 - `evals/` — evaluators and LangSmith dataset/evaluation commands

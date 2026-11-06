@@ -91,19 +91,34 @@ def correctness(run, example):
     result = judge.invoke(
         f"""You are grading a hospital-policy assistant.
 
-Decide whether the assistant answers the user's question accurately and directly.
-Use the reference answer to identify required facts, but require only facts that
-are relevant to the user's question. The assistant may use different wording.
-Fail if it omits a requested policy fact, adds a materially incorrect claim, or
-buries the answer in unrelated detail. Concise answers pass when they fully
-answer the question; do not require unrelated facts merely because they appear
-in the reference answer.
+Decide whether the assistant answers the user’s question accurately, directly,
+and completely.
+
+Use the reference answer to identify the facts required to answer the question,
+but treat it as a potentially non-exhaustive example. The assistant may use
+different wording and may include additional directly relevant details.
+
+Pass an answer when it covers all requested facts and any added detail is
+consistent with the reference, retrieved evidence, and the question’s scope.
+Do not fail an answer merely because it is more complete than the reference.
+
+Fail an answer if it:
+- omits a fact necessary to answer the user’s question;
+- states a materially incorrect or contradictory claim;
+- adds irrelevant, unsupported, or out-of-scope detail; or
+- buries the requested answer in unnecessary information.
+
+A concise answer passes when it fully answers the question. Do not require
+unrelated facts solely because they appear in the reference answer.
 
 User question:
 {user_question(run, example)}
 
 Reference answer:
 {reference_answer(example)}
+
+Retrieved policy evidence:
+{retrieved_evidence(run)}
 
 Assistant answer:
 {final_answer(run)}
@@ -116,22 +131,32 @@ Assistant answer:
 def groundedness(run, example):
     """Judge policy claims against the evidence retrieved in this run."""
     result = judge.invoke(
-        f"""You are judging whether a hospital-policy answer is grounded in its
-retrieved policy evidence. The retrieved passages are the only source of truth
-for policy claims; do not use the reference answer as evidence.
+    f"""You are judging whether a hospital-policy answer is grounded in the
+policy evidence retrieved during this run. Retrieved passages are the only
+source of truth for policy-specific claims. Do not use the reference answer as
+evidence.
 
-Check each policy-specific factual claim and citation in the answer against the
-retrieved passages. The answer may be concise and does not need to repeat every
-fact in the passages. Fail unsupported policy claims, invented details, or
-citations that do not match the passages.
+Check every policy-specific factual claim and every citation in the assistant
+answer against the retrieved passages. Pass concise answers; they do not need to
+repeat all retrieved facts. Fail an answer if it contains an unsupported policy
+claim, an invented detail, or a citation that does not support the claim it
+accompanies.
 
-A greeting, refusal, clarifying question, or direction to contact a supervisor
-or hospital line is routing behavior, not a policy claim; do not fail it solely
-because it is absent from retrieved passages. However, a statement that a policy
-requires something or does not specify a requested detail is a policy claim.
-For a claim that a policy omits a detail, pass only when relevant policy evidence
-was retrieved and that evidence supports the limited statement. An empty
-retrieval result cannot establish that the policy corpus lacks the information.
+Greetings, refusals, clarifying questions, and directions to contact a
+supervisor or hospital line are routing behavior rather than policy claims.
+Do not fail them merely because they are absent from retrieved passages.
+
+Claims that a policy requires something, permits something, or does not specify
+a requested detail are policy claims. A “not specified” claim passes only when
+relevant policy text was retrieved and that text supports the limited claim.
+The claim must be scoped to the retrieved policy information; it must not imply
+that the entire policy corpus lacks the detail.
+
+An empty retrieval result cannot support a claim about what hospital policies
+do or do not specify. When no relevant evidence was retrieved, pass only a
+non-policy uncertainty response, such as “I cannot confirm that detail from the
+available policy information,” provided it does not assert that the policies
+lack the detail.
 
 User question:
 {user_question(run, example)}
