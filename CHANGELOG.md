@@ -21,6 +21,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Refined policy-answer instructions for supported, partial, and unsupported questions, including a retry when relevant evidence is missing.
 - Updated correctness and groundedness judges to assess answers against retrieved policy evidence.
 - Lowered the default retrieval relevance threshold from 0.5 to 0.405.
+- Reduced the maximum number of retrieved policy chunks per search from 4 to 3.
 - Evaluation runs now require a description; pass it with the `--description` option.
 - Updated the legal-hold reference answer and added hospital-location routing to the assistant.
 

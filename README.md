@@ -37,7 +37,7 @@ Then install the project dependencies:
 uv sync --all-groups
 ```
 
-The model names and retrieval settings can be changed with environment variables. Defaults are `openai:gpt-5.6-luna` for chat, `openai:text-embedding-3-small` for embeddings, `4` retrieved chunks, and a relevance threshold of `0.5`.
+The model names and retrieval settings can be changed with environment variables. Defaults are `openai:gpt-5.6-luna` for chat, `openai:text-embedding-3-small` for embeddings, up to `3` retrieved chunks per search, and a relevance threshold of `0.405`.
 
 ## Build the policy index
 
