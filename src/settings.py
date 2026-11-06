@@ -25,7 +25,7 @@ class Settings(BaseSettings):
     chat_model: str = "openai:gpt-5.6-luna"
 
     retrieval_top_k: int = Field(default=4, ge=1)
-    retrieval_score_threshold: float = Field(default=0.42, ge=0.0, le=1.0)
+    retrieval_score_threshold: float = Field(default=0.405, ge=0.0, le=1.0)
 
     langsmith_api_key: str = Field(min_length=1)
 
