@@ -6,9 +6,11 @@
   "errors": 0,
   "latency_seconds": {
     "p50": 3.34,
-    "p95": 6.54,
+    "p99": 6.8,
     "max": 6.8
   },
+  "total_cost_usd": 0.00932424,
+  "runs_with_cost": 35,
   "retrieval_precision": {
     "mean_score": 0.6324,
     "rows_passed": 13,

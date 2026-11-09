@@ -6,6 +6,7 @@ import math
 import statistics
 import sys
 from datetime import UTC
+from decimal import Decimal
 from pathlib import Path
 from typing import Any
 
@@ -17,7 +18,12 @@ sys.path.insert(0, str(PROJECT_ROOT))
 
 from src.settings import get_settings
 
+# -----------------------------------------------------------------------------
+# Step 1: Define the local output paths and evaluator names.
+# -----------------------------------------------------------------------------
+
 RESULTS_DIR = PROJECT_ROOT / "evals" / "results"
+RESULTS_TABLE = RESULTS_DIR / "results.md"
 EVALUATOR_KEYS = (
     "retrieval_precision",
     "retrieval_recall",
@@ -25,6 +31,11 @@ EVALUATOR_KEYS = (
     "correctness",
     "groundedness",
 )
+
+
+# -----------------------------------------------------------------------------
+# Step 2: Summarize experiment latency, recorded costs, and evaluator scores.
+# -----------------------------------------------------------------------------
 
 
 def percentile(sorted_values: list[float], pct: float) -> float:
@@ -74,6 +85,8 @@ def build_summary(experiment_name: str, runs: list[Run], dataset_name: str | Non
         if duration is not None
     )
     started_at = min((run.start_time for run in runs if run.start_time), default=None)
+    # Root run cost includes recorded child-run costs without double-counting.
+    costs = [run.total_cost for run in runs if run.total_cost is not None]
     summary: dict[str, Any] = {
         "experiment_name": experiment_name,
         "dataset_name": dataset_name,
@@ -86,14 +99,45 @@ def build_summary(experiment_name: str, runs: list[Run], dataset_name: str | Non
         "errors": sum(bool(run.error) for run in runs),
         "latency_seconds": {
             "p50": round(percentile(latencies, 50), 2),
-            "p95": round(percentile(latencies, 95), 2),
+            "p99": round(percentile(latencies, 99), 2),
             "max": round(latencies[-1], 2) if latencies else 0.0,
         },
+        # An incomplete cost must not be presented as the experiment total.
+        "total_cost_usd": float(sum(costs, Decimal("0"))) if len(costs) == len(runs) else None,
+        "runs_with_cost": len(costs),
     }
     for key in EVALUATOR_KEYS:
         if block := evaluator_summary(runs, key):
             summary[key] = block
     return summary
+
+
+# -----------------------------------------------------------------------------
+# Step 3: Save experiment results and update the comparison table.
+# -----------------------------------------------------------------------------
+
+def update_results_table(summary: dict[str, Any], table_path: Path) -> None:
+    """Add or update one experiment row without changing other rows."""
+    name = summary["experiment_name"]
+    metrics = [summary.get(key, {}).get("mean_score") for key in EVALUATOR_KEYS]
+    values = [f"{value:.4f}" if value is not None else "N/A" for value in metrics]
+    latency = summary["latency_seconds"]
+    cost = summary["total_cost_usd"]
+    row = (
+        f"| `{name}` | " + " | ".join(values)
+        + f" | {latency['p50']:.2f} | {latency['p99']:.2f} | "
+        + (f"${cost:.8f}" if cost is not None else "N/A") + " |"
+    )
+    contents = table_path.read_text(encoding="utf-8")
+    lines = contents.splitlines()
+    prefix = f"| `{name}` |"
+    for index, line in enumerate(lines):
+        if line.startswith(prefix):
+            lines[index] = row
+            break
+    else:
+        lines.append(row)
+    table_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
 def export_experiment(experiment_name: str) -> Path:
@@ -116,6 +160,7 @@ def export_experiment(experiment_name: str) -> Path:
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     output_path = RESULTS_DIR / f"{experiment_name}.json"
     output_path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    update_results_table(summary, RESULTS_TABLE)
     scores = ", ".join(
         f"{key} {block['rows_passed']}/{block['rows_judged']}"
         for key in EVALUATOR_KEYS

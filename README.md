@@ -65,13 +65,13 @@ The graph is named `hospital-policy-agent` in `langgraph.json`. Build the policy
 
 Evaluation examples are stored in `evals/data/golden_dataset.json` and divided into `optimization` and `holdout` splits. Uploading or updating examples and running evaluations require a LangSmith API key.
 
-Create a LangSmith dataset for a split:
+Upload both splits to a new or existing LangSmith dataset:
 
 ```bash
-uv run python evals/upload_dataset.py --split optimization --tag baseline
+uv run python -m evals.upload_dataset --tag baseline
 ```
 
-The uploader uses the fixed dataset name `northbridge-policy-golden`. Use `evals/update_dataset.py` to update an existing dataset from the local JSON:
+The uploader uses the fixed dataset name `northbridge-policy-golden`, skips splits whose example IDs already match, and stops if a split is incomplete or inconsistent. It does not update existing examples. Tags refer to the entire dataset version, so use a new tag to preserve an earlier one. Use `evals/update_dataset.py` to update existing examples from the local JSON:
 
 ```bash
 uv run python evals/update_dataset.py --split optimization --tag updated
@@ -89,13 +89,13 @@ uv run python evals/run_evals.py \
 
 LangSmith stores each experiment's runs and evaluator results. The local runner prints the experiment name and does not write local result files. Precision and recall are fractional for examples with expected chunks; with no expected chunks, each score is `1.0` only when retrieval returns no chunks.
 
-Export a completed experiment summary as JSON, including pass counts, mean scores, run errors, and latency percentiles:
+Export a completed experiment summary as JSON, including pass counts, mean scores, run errors, latency percentiles, and recorded root-run cost:
 
 ```bash
 uv run python evals/export_experiment.py baseline-optimization-abc123
 ```
 
-The exporter writes `evals/results/<experiment_name>.json`. It reports `rows_passed` and `rows_judged` separately for each evaluator, so partial retrieval scores contribute to the mean but count as passed only when the score is `1.0`.
+The exporter writes `evals/results/<experiment_name>.json` and updates the corresponding row in `evals/results/results.md`. Total cost sums recorded root-run costs and excludes separately traced evaluator calls; it is `N/A` in the table when any run has no recorded cost. The exporter reports `rows_passed` and `rows_judged` separately for each evaluator, so partial retrieval scores contribute to the mean but count as passed only when the score is `1.0`.
 
 ## Project layout
 
