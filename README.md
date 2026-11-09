@@ -6,7 +6,7 @@ A LangChain ReAct agent using retrieval-augmented generation (RAG) to answer que
 
 1. Policy Markdown files in `policies/` are split into sections and indexed in a local Chroma vector store.
 2. LangChain's `create_agent` runs the ReAct loop: the model decides whether to call `search_kb`, receives the tool's results, and then writes its answer.
-3. `search_kb` embeds the question, retrieves relevant policy sections from Chroma, and returns their text and citation IDs.
+3. `search_kb` embeds the question, retrieves candidate policy sections from Chroma, filters them for relevance, and returns their text and citation IDs.
 4. The model answers from the retrieved evidence and cites the relevant `SEC_###` section.
 
 The index is built from the Markdown files; edit those files when policy content changes.
@@ -37,7 +37,7 @@ Then install the project dependencies:
 uv sync --all-groups
 ```
 
-The model names and retrieval settings can be changed with environment variables. Defaults are `openai:gpt-5.6-luna` for chat, `openai:text-embedding-3-small` for embeddings, up to `3` retrieved chunks per search, and a relevance threshold of `0.405`.
+The model names and retrieval settings can be changed with environment variables. Defaults are `openai:gpt-6.1-terra` for chat, `openai:gpt-6-luna` for relevance filtering, `openai:text-embedding-3-small` for embeddings, up to `3` retrieved candidates per search, and a relevance threshold of `0.405`.
 
 ## Build the policy index
 

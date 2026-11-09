@@ -22,7 +22,8 @@ class Settings(BaseSettings):
     openai_api_key: str = Field(min_length=1)
 
     embedding_model: str = "openai:text-embedding-3-small"
-    chat_model: str = "openai:gpt-5.6-luna"
+    light_chat_model: str = "openai:gpt-6-luna"
+    chat_model: str = "openai:gpt-6.1-terra"
 
     retrieval_top_k: int = Field(default=3, ge=1)
     retrieval_score_threshold: float = Field(default=0.405, ge=0.0, le=1.0)

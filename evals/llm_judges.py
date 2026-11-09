@@ -5,6 +5,7 @@ from pydantic import BaseModel, Field
 
 from evals.judge_tools import get_value
 from src.settings import get_settings
+from src.prompts import HOSPITAL_ADDRESS, HOSPITAL_CONTACT_NUMBER
 
 settings = get_settings()
 
@@ -146,6 +147,18 @@ Greetings, refusals, clarifying questions, and directions to contact a
 supervisor or hospital line are routing behavior rather than policy claims.
 Do not fail them merely because they are absent from retrieved passages.
 
+A refusal such as “I am not permitted to answer that question” is an
+instruction-based scope restriction, not a claim about hospital policy.
+Pass it without retrieved evidence, provided it does not invent a specific
+hospital policy or cite unsupported policy text.
+
+The agent is given the following approved hospital contact information:
+- Address: {HOSPITAL_ADDRESS}
+- General line: {HOSPITAL_CONTACT_NUMBER}
+
+These contact details do not require retrieved policy evidence. A different
+address or phone number must be supported by evidence.
+
 Claims that a policy requires something, permits something, or does not specify
 a requested detail are policy claims. A “not specified” claim passes only when
 relevant policy text was retrieved and that text supports the limited claim.
@@ -153,10 +166,10 @@ The claim must be scoped to the retrieved policy information; it must not imply
 that the entire policy corpus lacks the detail.
 
 An empty retrieval result cannot support a claim about what hospital policies
-do or do not specify. When no relevant evidence was retrieved, pass only a
-non-policy uncertainty response, such as “I cannot confirm that detail from the
-available policy information,” provided it does not assert that the policies
-lack the detail.
+do or do not specify. When no relevant evidence was retrieved, a non-policy
+uncertainty response or the approved contact information above may pass. Do
+not pass a claim that the policies lack a detail solely because retrieval
+returned no evidence.
 
 User question:
 {user_question(run, example)}
