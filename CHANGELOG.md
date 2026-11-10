@@ -14,14 +14,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Local LangGraph development server for running the LangChain agent.
 - Evaluation datasets and LangSmith workflows for scoring answer correctness, groundedness, retrieval precision and recall, and tool selection.
 - An experiment export command and saved summaries with evaluator scores, errors, and latency percentiles.
+- A tracked table comparing mean scores across completed experiments.
+- Model-based filtering of retrieved policy chunks before they are returned to the agent.
+- A business document describing project goals, evaluation findings, and the quality and cost decision.
+- Separate optimization and holdout experiment comparisons with recorded costs and p50 and p99 latency.
 
 ### Changed
 
 - Refined policy-answer instructions for supported, partial, and unsupported questions, including a retry when relevant evidence is missing.
 - Updated correctness and groundedness judges to assess answers against retrieved policy evidence.
-- Lowered the default retrieval relevance threshold from 0.5 to 0.4.
+- Updated the groundedness judge to recognize approved hospital contact details and scope-based refusals without retrieved policy evidence.
+- Changed the default chat model to GPT-6.1 Terra and added GPT-6 Luna as the light model for relevance filtering.
+- Lowered the default retrieval relevance threshold from 0.5 to 0.405.
+- Reduced the maximum number of retrieved policy chunks per search from 4 to 3.
 - Evaluation runs now require a description; pass it with the `--description` option.
 - Updated the legal-hold reference answer and added hospital-location routing to the assistant.
+- Upload both evaluation splits to one LangSmith dataset, with checks to avoid duplicating existing examples.
+- Update the experiment comparison table when exporting an experiment summary.
+- Clarified policy-topic guidance, targeted search retries, and when to ask for clarification.
 
 ### Removed
 

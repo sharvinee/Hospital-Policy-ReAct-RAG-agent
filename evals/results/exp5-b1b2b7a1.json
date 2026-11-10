@@ -1,0 +1,39 @@
+{
+  "experiment_name": "exp5-b1b2b7a1",
+  "dataset_name": "northbridge-policy-golden",
+  "run_started_at": "2026-11-06T19:21:52Z",
+  "total_examples": 35,
+  "errors": 0,
+  "latency_seconds": {
+    "p50": 3.55,
+    "p99": 5.9,
+    "max": 5.9
+  },
+  "total_cost_usd": 0.0086952,
+  "runs_with_cost": 35,
+  "retrieval_precision": {
+    "mean_score": 0.7333,
+    "rows_passed": 19,
+    "rows_judged": 35
+  },
+  "retrieval_recall": {
+    "mean_score": 0.9571,
+    "rows_passed": 33,
+    "rows_judged": 35
+  },
+  "tool_match": {
+    "mean_score": 1.0,
+    "rows_passed": 35,
+    "rows_judged": 35
+  },
+  "correctness": {
+    "mean_score": 0.9714,
+    "rows_passed": 34,
+    "rows_judged": 35
+  },
+  "groundedness": {
+    "mean_score": 0.9429,
+    "rows_passed": 33,
+    "rows_judged": 35
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "experiment_name": "holdout-exp1-a6f8f36a",
+  "dataset_name": "northbridge-policy-golden",
+  "run_started_at": "2026-11-09T22:30:46Z",
+  "total_examples": 15,
+  "errors": 0,
+  "latency_seconds": {
+    "p50": 6.04,
+    "p99": 10.69,
+    "max": 10.69
+  },
+  "total_cost_usd": 0.0140138,
+  "runs_with_cost": 15,
+  "retrieval_precision": {
+    "mean_score": 0.8556,
+    "rows_passed": 11,
+    "rows_judged": 15
+  },
+  "retrieval_recall": {
+    "mean_score": 0.9667,
+    "rows_passed": 14,
+    "rows_judged": 15
+  },
+  "tool_match": {
+    "mean_score": 1.0,
+    "rows_passed": 15,
+    "rows_judged": 15
+  },
+  "correctness": {
+    "mean_score": 0.9333,
+    "rows_passed": 14,
+    "rows_judged": 15
+  },
+  "groundedness": {
+    "mean_score": 1.0,
+    "rows_passed": 15,
+    "rows_judged": 15
+  }
+}
