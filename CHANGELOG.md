@@ -21,7 +21,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
-- Refined policy-answer instructions for supported, partial, and unsupported questions, including a retry when relevant evidence is missing.
+- Refined policy-answer instructions for supported, partial, and unsupported questions, including per-detail evidence checks and focused retries.
+- Reduced the default number of retrieved policy chunks per search from 3 to 2.
+- Added summaries for experiments 17 and 18 to the comparison table.
 - Updated correctness and groundedness judges to assess answers against retrieved policy evidence.
 - Updated the groundedness judge to recognize approved hospital contact details and scope-based refusals without retrieved policy evidence.
 - Changed the default chat model to GPT-6.1 Terra and added GPT-6 Luna as the light model for relevance filtering.
@@ -35,4 +37,5 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Removed
 
+- Removed the extra model-based relevance-filtering step after vector search; the agent now evaluates the retrieved evidence against the question.
 - The redundant tracked policy JSON snapshot; the Markdown policy sources remain the inputs to the knowledge-base build.
